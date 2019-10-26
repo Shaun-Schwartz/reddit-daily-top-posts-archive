@@ -1,3 +1,59 @@
 // Place all the styles related to the reddit_posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font: normal x-small verdana,arial,helvetica,sans-serif;
+  margin: 0px;
+}
+
+.header {
+  background-color: #cae2f9;
+  border-bottom: 1px solid #5f99cf;
+  height: 60px;
+}
+
+.picker {
+  padding: 10px 0px 0px 5px;
+}
+
+.posts {
+  padding: 10px 0px 0px 5px;
+}
+
+.title {
+  font-size: medium;
+  font-weight: normal;
+  margin-bottom: 1px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.upvote-container {
+  float: left;
+  margin-right: 7px;
+  margin-left: 7px;
+  width: 35px;
+}
+
+.arrow {
+  background-image: url("https://www.redditstatic.com/sprite-reddit.e5NqNKsOkdA.png");
+  background-position: -80px -1654px;
+  background-repeat: no-repeat;
+  margin: 2px 0px 0px 0px;
+  height: 14px;
+  display: block;
+  width: 15px;
+  margin-right: auto;
+  outline: none;
+  padding-left: 10px;
+}
+
+.post {
+  margin-top: 5px;
+  padding-top: 5px;
+  display: flex;
+}

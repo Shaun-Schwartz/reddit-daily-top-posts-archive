@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <div class='header'>
+      <div class='picker'>
+        <%= form_tag archive_path, method: :get do %>
+          Subreddit: <%= select_tag(:subreddit, options_for_select(RedditPost::SUBREDDITS)) %>
+          Date: <%= select_date Date.today %>
+          <%= submit_tag 'Go', name: nil %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

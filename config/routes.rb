@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'reddit_posts#index'
   get '/archive', to: 'reddit_posts#archive'
 end

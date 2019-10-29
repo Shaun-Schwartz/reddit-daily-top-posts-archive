@@ -1,0 +1,9 @@
+---
+:dynamic: true
+:concurrency: 2
+:verbose: false
+:pidfile: tmp/pids/sidekiq.pid
+
+:schedule:
+  GetDailyTopPostsJob:
+    cron: "0 4 * * *" # 4 AM server time

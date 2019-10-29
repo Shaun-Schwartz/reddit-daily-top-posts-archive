@@ -1,5 +1,5 @@
-class GetDailyTopPostsJob < ApplicationJob
-  queue_as :default
+class GetDailyTopPostsJob
+  include Sidekiq::Worker
 
   def perform
     RedditPost::SUBREDDITS.each do |subreddit|

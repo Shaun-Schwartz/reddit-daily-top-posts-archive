@@ -1,13 +1,10 @@
 require 'httparty'
 module RedditPostsHelper
-  # REDDIT API
-  CLIENT_ID = 'wD9aesYdkR1EjQ'
-  CLIENT_SECRET = 'zoW9GibIEIUn92eFijqRzTBqHS8'
 
-  # REDDIT USER CREDS
-  REDDIT_USER = 'mr_november'
-  REDDIT_PWD = '05s5y7wWxUZMrV2o'
-
+  CLIENT_ID = Rails.application.credentials.reddit_client_id
+  CLIENT_SECRET = Rails.application.credentials.reddit_client_secret
+  REDDIT_USER = Rails.application.credentials.reddit_user
+  REDDIT_PWD = Rails.application.credentials.reddit_password
   USER_AGENT = "RedditTopPostArchive/0.1 by #{REDDIT_USER}"
   NUM_OF_POSTS = 2
 

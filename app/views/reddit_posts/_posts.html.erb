@@ -1,15 +1,17 @@
 <div class='posts'>
-  <% posts.each do |post| %>
-    <div class='post'>
-      <div class='upvote-container'>
-        <div class='arrow'></div>
-        <% if post.upvotes >= 1000 %>
-          <%= number_with_precision(post.upvotes.to_f/1000, precision: 1) %>k
-        <% else %>
-          <%= post.upvotes %>
-        <% end %>
+  <% if posts %>
+    <% posts.each do |post| %>
+      <div class='post'>
+        <div class='upvote-container'>
+          <div class='arrow'></div>
+          <% if post.upvotes >= 1000 %>
+            <%= number_with_precision(post.upvotes.to_f/1000, precision: 1) %>k
+          <% else %>
+            <%= post.upvotes %>
+          <% end %>
+        </div>
+        <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %><br>
       </div>
-      <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %><br>
-    </div>
+    <% end %>
   <% end %>
 </div>

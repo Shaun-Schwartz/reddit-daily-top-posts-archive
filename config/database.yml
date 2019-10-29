@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: reddit_top_post_archive_production
-  username: reddit_top_post_archive
+  username: ubuntu
   password: <%= ENV['REDDIT_TOP_POST_ARCHIVE_DATABASE_PASSWORD'] %>

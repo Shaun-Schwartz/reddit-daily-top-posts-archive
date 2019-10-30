@@ -10,7 +10,18 @@ body {
 .header {
   background-color: #cae2f9;
   border-bottom: 1px solid #5f99cf;
-  height: 60px;
+  height: 50px;
+  display: flex;
+  padding-top: 10px;
+}
+
+.logo {
+  background-image: image-url("sprite-reddit.png");
+  background-position: 5px -1323px;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+
 }
 
 .picker {
@@ -40,7 +51,7 @@ a {
 }
 
 .arrow {
-  background-image: url("https://www.redditstatic.com/sprite-reddit.e5NqNKsOkdA.png");
+  background-image: image-url("sprite-reddit.png");
   background-position: -80px -1654px;
   background-repeat: no-repeat;
   margin: 2px 0px 0px 0px;

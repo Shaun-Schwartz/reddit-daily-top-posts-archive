@@ -1,5 +1,5 @@
 <div class='posts'>
-  <% if posts %>
+  <% if posts.exists? %>
     <% posts.each do |post| %>
       <div class='post'>
         <div class='upvote-container'>
@@ -9,5 +9,8 @@
         <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %><br>
       </div>
     <% end %>
+  <% else %>
+    <h1>No posts found.</h1>
+    <div class='title'>Try a different date or subreddit</div>
   <% end %>
 </div>

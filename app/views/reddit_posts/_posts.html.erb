@@ -6,7 +6,13 @@
           <div class='arrow'></div>
           <%= RedditPostsHelper.upvotes_formatter(post.upvotes) %>
         </div>
-        <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %><br>
+        <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %>
+        <div class='post-info'>
+          <div class='post-submitted'>
+            submitted <%= RedditPostsHelper.submitted_formatter(post.submitted_date) %> to <%= link_to "r/#{post.subreddit}", "https://reddit.com/r/#{post.subreddit}", :target => '_blank' %>
+          </div>
+          <%= link_to 'Comments', "https://reddit.com#{post.permalink}", :target => '_blank', :class => 'post-comments' %>
+        </div>
       </div>
     <% end %>
   <% else %>

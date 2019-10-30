@@ -34,4 +34,19 @@ module RedditPostsHelper
       return upvotes
     end
   end
+
+  def self.submitted_formatter(submitted)
+    hour_in_seconds = 3600
+    seconds_since_submission = (Time.now - submitted).round
+    if seconds_since_submission <= hour_in_seconds
+      minutes_since_submission = (seconds_since_submission / 60).round
+      return "#{ActionController::Base.helpers.pluralize(minutes_since_submission, 'minute')} ago"
+    elsif (seconds_since_submission / hour_in_seconds).round > 24
+      days_since_submission = ((seconds_since_submission / hour_in_seconds) / 24).round
+      return "#{ActionController::Base.helpers.pluralize(days_since_submission, 'day')} ago"
+    else
+      hours_since_submission = (seconds_since_submission / hour_in_seconds).round
+      return "#{ActionController::Base.helpers.pluralize(hours_since_submission, 'hour')} ago"
+    end
+  end
 end

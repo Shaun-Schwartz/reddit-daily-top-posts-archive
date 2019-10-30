@@ -66,9 +66,21 @@ a {
 .post {
   margin-top: 5px;
   padding-top: 5px;
-  display: flex;
+  display: block;
 }
 
 .post-info {
-  display: flex;
+  padding-left: 45px;
+  a {
+    color: #888;
+    font-weight: bold;
+  }
+  .post-submitted {
+    color: #888;
+    padding-left: 5px;
+  }
+}
+
+.post-comments {
+  padding-left: 5px;
 }

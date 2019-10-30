@@ -1,0 +1,15 @@
+[Unit]
+Description=Puma Rails Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reddit-daily-top-posts-archive
+ExecStart=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec puma -C /home/ubuntu/reddit-daily-top-posts-archive/config/puma.rb
+ExecStop=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec pumactl -S /home/ubuntu/reddit-daily-top-posts-archive/shared/pids/puma.state stop
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

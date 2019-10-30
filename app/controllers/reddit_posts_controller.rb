@@ -2,7 +2,7 @@ class RedditPostsController < ApplicationController
 
   def index
     most_recent_post_date = RedditPost.reorder('created_at').last&.submitted_date
-    @todays_posts = RedditPost.where("submitted_date::date = ?", most_recent_post_date)
+    @most_recent_posts = RedditPost.date(most_recent_post_date)
   end
 
   def archive

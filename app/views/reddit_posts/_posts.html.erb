@@ -4,11 +4,7 @@
       <div class='post'>
         <div class='upvote-container'>
           <div class='arrow'></div>
-          <% if post.upvotes >= 1000 %>
-            <%= number_with_precision(post.upvotes.to_f/1000, precision: 1) %>k
-          <% else %>
-            <%= post.upvotes %>
-          <% end %>
+          <%= RedditPostsHelper.upvotes_formatter(post.upvotes) %>
         </div>
         <%= link_to post.title, post.url, :target => '_blank', :class => 'title' %><br>
       </div>

@@ -26,4 +26,12 @@ module RedditPostsHelper
     response = HTTParty.get("https://oauth.reddit.com/r/#{subreddit}/top/?t=day/.json?limit=#{NUM_OF_POSTS}", options)
     return response
   end
+
+  def self.upvotes_formatter(upvotes)
+    if upvotes >= 1000
+      return "#{ActionController::Base.helpers.number_with_precision(upvotes.to_f/1000, precision: 1)}k"
+    else
+      return upvotes
+    end
+  end
 end

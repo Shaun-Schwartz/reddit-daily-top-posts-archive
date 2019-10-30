@@ -83,3 +83,5 @@ production:
   database: reddit_top_post_archive_production
   username: ubuntu
   password: <%= ENV['REDDIT_TOP_POST_ARCHIVE_DATABASE_PASSWORD'] %>
+  pool: 5
+  timeout: 5000

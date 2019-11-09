@@ -1,1 +1,1 @@
-Want to find out what the top posts on a given date were on reddit? This functionality is not offered by reddit so this application runs a job once a day to get the top 25 posts for the 15 most popular subreddits.
+Want to find out what the top posts on a given date were on reddit? This functionality is not offered by reddit. This application runs a job once a day to get the top 25 posts for the most popular subreddits and allows a user to select a date and subreddit to see what was on the front page of the internet on that day.

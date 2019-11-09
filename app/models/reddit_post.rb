@@ -4,5 +4,5 @@ class RedditPost < ApplicationRecord
                 'iama', 'news', 'gifs']
 
   scope :date, -> (datetime) { where('submitted_date::date = :datetime::date', datetime: datetime)}
-  scope :subreddit, -> (subreddit) { where(subreddit: subreddit) }
+  scope :subreddit, -> (subreddit) { where('subreddit ILIKE ?', subreddit) }
 end

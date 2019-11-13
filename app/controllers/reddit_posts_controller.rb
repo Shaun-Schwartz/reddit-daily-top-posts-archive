@@ -13,4 +13,8 @@ class RedditPostsController < ApplicationController
     @subreddit = params['subreddit']
     @posts = RedditPost.date(@date).subreddit(@subreddit)
   end
+
+  def subreddits
+    render json: {subreddits: RedditPost::SUBREDDITS}
+  end
 end

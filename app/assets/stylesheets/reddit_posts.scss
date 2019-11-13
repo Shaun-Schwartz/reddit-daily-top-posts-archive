@@ -25,7 +25,9 @@ body {
 }
 
 .picker {
-  padding: 10px 0px 0px 5px;
+  display: flex;
+  padding-left: 5px;
+  width: 100%;
 }
 
 .posts {
@@ -83,4 +85,8 @@ a {
 
 .post-comments {
   padding-left: 5px;
+}
+
+.subreddit-select {
+  width: 150px;
 }

@@ -10,9 +10,9 @@ require("channels")
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import {Navigation} from '../components/Navigation'
+import App from '../components/App'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const navigationDiv = document.querySelector('#Navigation');
-  ReactDOM.render(<Navigation />,navigationDiv)
+  const appDiv = document.querySelector('#App');
+  ReactDOM.render(<App />, appDiv)
 })

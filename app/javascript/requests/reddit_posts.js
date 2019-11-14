@@ -1,12 +1,12 @@
 import {BASE_URL} from './config'
 
 export const RedditPost = {
-  all() {
-    return fetch(`${BASE_URL}/api/v1/battles`)
-      .then(res => res.json())
-  },
   subreddits() {
     return fetch(`${BASE_URL}/subreddits`)
+      .then(res => res.json())
+  },
+  index() {
+    return fetch(`${BASE_URL}/reddit_posts`)
       .then(res => res.json())
   }
 }

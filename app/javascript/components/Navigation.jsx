@@ -1,56 +1,41 @@
 import React, {Component} from 'react';
 import {RedditPost} from '../requests/reddit_posts.js';
 import Select from 'react-select'
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class Navigation extends Component {
   constructor (props) {
     super (props);
-
-    this.state = {
-      loading: true,
-      subreddits: [],
-      chosenSubreddit: null
-    }
-  }
-
-  componentDidMount() {
-    RedditPost
-      .subreddits()
-      .then(res => {
-        var subreddits = []
-        res.subreddits.forEach(subreddit => {
-          subreddits.push({'value': subreddit, 'label': subreddit})
-        })
-        this.setState({
-          subreddits: subreddits,
-          chosenSubreddit: res.subreddits[0],
-          loading: false
-        })
-      })
   }
 
   render () {
-    const loading = this.state.loading;
-    const subreddits = this.state.subreddits;
-    const chosenSubreddit = this.state.chosenSubreddit;
-    if (loading) {
+    const {loadingSubreddits, subreddits, chosenSubreddit} = this.props
+    if (loadingSubreddits) {
       return (
-        <div className="header">
+        <div className='header'>
           Loading
         </div>
       )
     } else {
       return (
-        <div className="header">
-          <a href="/"><div className="logo"></div></a>
-          <div className="picker">
-            <h2 style={{marginTop: "10px", marginRight: "5px"}}>Subreddit: </h2>
+        <div className='header'>
+          <a href='/'><div className='logo'></div></a>
+          <div className='picker'>
+            <h2 style={{marginTop: '10px', marginRight: '5px'}}>Subreddit: </h2>
             <Select
-              className="subreddit-select"
-              classNamePrefix="select"
+              onChange={(e) => this.props.handleSubredditChange(e['value'])}
+              className='subreddit-select'
+              classNamePrefix='select'
               defaultValue={subreddits[0]}
-              name="color"
+              name='color'
               options={subreddits} />
+            <h2 style={{marginTop: '10px', marginRight: '5px'}}>Date: </h2>
+            <DatePicker
+              className='date-picker'
+              selected={this.props.startDate}
+              onChange={this.props.handleDateChange} />
+            <button onClick={this.props.handleClick} className='go-button'>Go</button>
           </div>
         </div>
       )

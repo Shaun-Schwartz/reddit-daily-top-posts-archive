@@ -5,31 +5,17 @@ import {RedditPostDetails} from './RedditPostDetails';
 class RedditPostIndexPage extends Component {
   constructor (props) {
     super (props);
-
-    this.state = {
-      loading: true,
-      posts: []
-    }
-  }
-
-  componentDidMount() {
-    RedditPost
-      .index()
-      .then(posts => {
-        this.setState({posts: posts, loading: false})
-      })
   }
 
   render () {
-    const posts = this.state.posts;
-    const loading = this.state.loading;
-    if (loading) {
+    const {posts, loadingPosts} = this.props;
+    if (loadingPosts) {
       return (
-        <div className="posts">
+        <div className='posts'>
           Loading
         </div>
       )
-    } else if (!loading && posts.length === 0) {
+    } else if (!loadingPosts && posts.length === 0) {
       return (
         <div className='posts'>
           <h2>No posts found</h2>
@@ -38,7 +24,7 @@ class RedditPostIndexPage extends Component {
       )
     } else {
       return (
-        <div className="posts">
+        <div className='posts'>
           {posts.map(post => (
             <RedditPostDetails post={post} key={post.id}/>
           ))}

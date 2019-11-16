@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {RedditPost} from '../requests/reddit_posts.js';
 import Select from 'react-select'
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 
 class Navigation extends Component {
   constructor (props) {

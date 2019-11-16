@@ -6,7 +6,7 @@ class RedditPostDetails extends Component {
   }
 
   render () {
-    const post = this.props.post;
+    const {post} = this.props;
     return (
       <div className='post'>
         <div className='upvote-container'>
